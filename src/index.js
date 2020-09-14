@@ -7,7 +7,10 @@ import { createStore } from 'redux';
 import reducer from './reducers/ticket-list-reducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 // we are passing our reducer into the createStore function. That means the store constant is a Redux store that knows how to handle the actions we've defined in our reducer.
 
 ReactDOM.render(
