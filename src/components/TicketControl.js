@@ -3,6 +3,7 @@ import NewTicketForm from './NewTicketForm';
 import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
 import EditTicketForm from './EditTicketForm';
+import { connect } from 'react-redux';
 
 class TicketControl extends React.Component {
 
@@ -96,4 +97,10 @@ class TicketControl extends React.Component {
 
 }
 
+TicketControl = connect()(TicketControl);
+//The connect() function redefines our entire TicketControl component as a new TicketControl component with additional functionality included. The return value of the connect() function is the TicketControl component itself, but this time we will have powerful new tools at our disposal: the dispatch() and mapStateToProps() functions.
+
+//Note that it's important that connect() is called right before we export TicketControl. That ensures that the component that's exported has all necessary React Redux functionality.
+
+//connect() is what is known as a higher-order component. This is a common term in React. A higher-order component is a function that takes an existing component, wraps it with additional functionality, and then returns it so it can be used elsewhere in an application.
 export default TicketControl;
