@@ -17,7 +17,10 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
+store.subscribe(() =>
+  console.log(store.getState())
+);
+//Remember the subscribe() method that Redux provides? Generally, we won't use Redux's subscribe() or getState() in our "production" code, but it's excellent for testing. This is a great way to keep an eye on the current state of the store.
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
