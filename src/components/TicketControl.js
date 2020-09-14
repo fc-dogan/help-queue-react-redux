@@ -113,7 +113,15 @@ class TicketControl extends React.Component {
 
 }
 
-TicketControl = connect()(TicketControl);
+const mapStateToProps = state => {
+  return {
+    masterTicketList: state     //// Key-value pairs of state to be mapped from Redux to React component go here.
+  }
+}
+
+TicketControl = connect(mapStateToProps)(TicketControl);
+//  This ensures the TicketControl component has the mapStateToProps functionality when connect() redefines the component.
+
 //The connect() function redefines our entire TicketControl component as a new TicketControl component with additional functionality included. The return value of the connect() function is the TicketControl component itself, but this time we will have powerful new tools at our disposal: the dispatch() and mapStateToProps() functions.
 
 //Note that it's important that connect() is called right before we export TicketControl. That ensures that the component that's exported has all necessary React Redux functionality.
