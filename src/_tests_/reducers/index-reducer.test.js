@@ -20,7 +20,7 @@ describe('rootReducer', () => {
   test('Check that initial state of formVisibleReducer matches root reducer', () => {
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
   });
-  
+
   test('Check that initial state of ticketListReducer matches root reducer', () => {
     const action = {
       type: 'ADD_TICKET',
@@ -40,5 +40,6 @@ describe('rootReducer', () => {
     store.dispatch(action);
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
   });
+  
   
 });
