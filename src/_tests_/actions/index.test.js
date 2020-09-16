@@ -5,6 +5,12 @@ describe('help que actions', () => {
     expect(actions.deleteTicket(1)).toEqual({
       type: 'DELETE_TICKET',
       id: 1
-    })
-  })
-})
+    });
+  });
+
+  it('toggleForm shoul create TOGGLE_FORM action', () => {
+    expect(actions.toggleForm()).toEqual({
+      type: 'TOGGLE_FORM'
+    });
+  });
+});
